@@ -1,24 +1,21 @@
 # Skodaice2
 
 ## Overview
-Brief description of your project here.
+SkodaIce website which currently has the CIZ hockey stats
 
 ## Features
-- Feature 1
-- Feature 2
-- Feature 3
+Website directory contains the files for the web server
+Webserver directory has files and commands for setting up the server
+
 
 ## Installation
 ```bash
-# Installation steps here
-npm install skodaice2
+
 ```
 
 ## Usage
 ```bash
 # Example usage code here
-const skodaice2 = require('skodaice2');
-skodaice2.doSomething();
 ```
 
 ## Contributing

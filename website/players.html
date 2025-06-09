@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIZ Players</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .error {
+            color: red;
+            padding: 10px;
+            background-color: #ffeeee;
+            border: 1px solid #ffcccc;
+            border-radius: 4px;
+        }
+        .loading {
+            margin: 20px 0;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>CIZ Players</h1>
+    
+    <div id="loading" class="loading">Loading players data...</div>
+    <div id="error" class="error" style="display:none;"></div>
+    <div id="results">
+        <table id="playersTable">
+            <thead>
+                <tr id="tableHeader"></tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Function to fetch data from the API
+        async function fetchPlayers() {
+            try {
+                // Show loading message
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('error').style.display = 'none';
+                
+                // Fetch data from API
+                const response = await fetch('players.php');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Hide loading message
+                document.getElementById('loading').style.display = 'none';
+                
+                // Display data
+                displayPlayers(data);
+                
+            } catch (error) {
+                // Show error message
+                document.getElementById('loading').style.display = 'none';
+                const errorDiv = document.getElementById('error');
+                errorDiv.textContent = 'Error loading players data: ' + error.message;
+                errorDiv.style.display = 'block';
+                console.error('Error:', error);
+            }
+        }
+        
+        // Function to display players data in table
+        function displayPlayers(players) {
+
+            if (players.length === 0) {
+                document.getElementById('results').textContent = 'No players found.';
+                return;
+            }
+            
+            // Create table headers based on first players object's properties
+            const headerRow = document.getElementById('tableHeader');
+            const columns = Object.keys(players[0]);
+            
+            columns.forEach(column => {
+                const th = document.createElement('th');
+                th.textContent = column;
+                headerRow.appendChild(th);
+            });
+            
+            // Create table rows for each player 
+            const tableBody = document.getElementById('tableBody');
+            players.forEach(player => {
+                const row = document.createElement('tr');
+                
+                columns.forEach(column => {
+                    const cell = document.createElement('td');
+                    cell.textContent = player[column];
+                    row.appendChild(cell);
+                });
+                
+                tableBody.appendChild(row);
+            });
+        }
+        
+        // Load players when page loads
+        window.onload = fetchPlayers;
+    </script>
+    <div style="margin-top: 30px; padding: 10px; border-top: 1px solid #ddd;">
+        <a href="/" style="text-decoration: none; color: #0066cc;">← Return to Home</a>
+    </div>
+</body>
+</html>
