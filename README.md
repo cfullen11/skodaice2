@@ -4,6 +4,8 @@
 SkodaIce website which currently has the CIZ hockey stats
 
 ## Features
+Website directory contains the files for the web server
+Webserver directory has files and commands for setting up the server
 
 
 ## Installation
