@@ -7,8 +7,8 @@ header("Access-Control-Allow-Methods: GET");
 // Database credentials - store these securely in production!
 $host = "skodaicedb.cjb4baksbin5.us-east-1.rds.amazonaws.com";
 $dbname = "stats";
-$username = "webreader"; // Replace with your actual username
-$password = "skims11Mysql!"; // Replace with your actual password
+$username = "webreader";
+$password = "fakepwd";
 
 try {
     // Connect to database

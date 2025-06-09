@@ -1,0 +1,142 @@
+    1  sudo apt intstall
+    2  sudo dnf update -y
+    3  sudo dnf install -y httpd
+    4  sudo systemctl start httpd
+    5  ps
+    6  top
+    7  ls /etc
+    8  cd /var/www/
+    9  ls
+   10  cd html
+   11  ls
+   12  cd ..
+   13  ls cgi-bin/
+   14  ls -a html
+   15  vim
+   16  cd html
+   17  vim index.html
+   18  touch index.html
+   19  sudo vim indext.html
+   20  ls
+   21  cd ../..
+   22  ls
+   23  ls wwww
+   24  ls www
+   25  sudo ls www/html
+   26  sudo systemctl enable httpd
+   27  sudo usermod -a -G apache ec2-user
+   28  exit
+   29  groups
+   30  sudo chown -R ec2-user:apache /var/www
+   31  sudo chmod 2775 /var/www
+   32  find /var/www -type d -exec sudo chmod 2775 {} \;
+   33  find /var/www -type f -exec sudo chmod 0664 {} \;
+   34  ls -al /var/www
+   35  ls -al /var/www/html
+   36  cd /var/www/html/
+   37  ls
+   38  mv indext.html index.html
+   39  ls
+   40  sudo certbot certonly --standalone -d skodaice.com -d www.skodaice.com
+   41  dft
+   42  history
+   43  sudo dnf install -y certbot
+   44  sudo certbot certonly --apache -d skodaice.com -d www.skodaice.com
+   45  cd
+   46  exit
+   47  sudo certbot certonly --apache -d skodaice.com -d www.skodaice.com
+   48  sudo certbot certonly --standalone -d skodaice.com -d www.skodaice.com
+   49  sudo systemctl stop httpd
+   50  sudo certbot certonly --standalone -d skodaice.com -d www.skodaice.com
+   51  sudo systemctl start httpd
+   52  sudo certbot certonly --standalone -d skodaice.com -d www.skodaice.com
+   53  sudo dnf install python3-certbot-apache
+   54  sudo certbot certonly --apache -d skodaice.com -d www.skodaice.com
+   55  exit
+   56  sudo certbot certonly --apache -d skodaice.com -d www.skodaice.com
+   57  sudo ps
+   58  ls /etc/
+   59  hg apache
+   60  history | grep apache
+   61  find apache
+   62  which apache
+   63  which apache2
+   64  apache
+   65  httpd -v
+   66  ls /etc/httpd/
+   67  ls /etc/httpd/conf/
+   68  ls /etc/httpd/conf/conf.d/
+   69  ls /etc/httpd/conf.d/
+   70  ls /etc/httpd/conf
+   71  cat /etc/httpd/conf/httpd.conf 
+   72  cd /etc/httpd/conf.d/
+   73  ls
+   74  touch skodaice.com.conf
+   75  sudo skodaice.com.conf
+   76  sudo touch skodaice.com.conf
+   77  sudo vim skodaice.com.conf 
+   78  sudo systemctl reload httpd
+   79  sudo vim skodaice.com.conf 
+   80  sudo systemctl reload httpd
+   81  mv /var/www/html/index.html /var/www/html/skodaice.com
+   82  ls /var/www/html/skodaice.com 
+   83  sudo systemctl start httpd
+   84  sudo certbot certonly --apache -d skodaice.com -d www.skodaice.com
+   85  ps -a
+   86  top
+   87  process
+   88  help
+   89  ps aux
+   90  sudo vim skodaice.com.conf 
+   91  cat /var/log/httpd/error_log
+   92  sudo cat /var/log/httpd/error_log
+   93  sudo vim skodaice.com.conf 
+   94  sudo systemctl reload httpd
+   95  sudo systemctl stop httpd
+   96  sudo systemctl start httpd
+   97  cat /var/log/httpd/error_log
+   98  sudo cat /var/log/httpd/error_log
+   99  ls /var/www/html/
+  100  ls /var/www/html/skodaice.com 
+  101  sudo vim skodaice.com.conf 
+  102  sudo systemctl reload httpd
+  103  sudo cat /var/log/httpd/error_log
+  104  ls
+  105  cat README 
+  106  sudo httpd -t
+  107  ps aux | grep httpd
+  108  sudo chown -R apache:apache /var/www/html/skodaice.com
+  109  sudo find /var/www/html/skodaice.com -type d -exec chmod 755 {} \;
+  110  sudo find /var/www/html/skodaice.com -type f -exec chmod 644 {} \;
+  111  sudo systemctl stop httpd
+  112  sudo systemctl start httpd
+  113  sudo httpd -t
+  114  sudo chmod o+x /var
+  115  sudo chmod o+x /var/www
+  116  sudo chcon -R -t httpd_sys_content_t /var/www/html/skodaice.com
+  117  sudo systemctl stop httpd
+  118  sudo systemctl start httpd
+  119  sudo httpd -t
+  120  cat /var/www/html/skodaice.com
+  121  cat skodaice.com.conf 
+  122  ls -ld /var/www/html/skodaice.com
+  123  vim skodaice.com.conf 
+  124  sudo vim skodaice.com.conf 
+  125  sudo systemctl restart httpd
+  126  sudo httpd -t
+  127  sudo systemctl stop httpd
+  128  sudo systemctl start httpd
+  129  sudo httpd -t
+  130  ls -ld /var/www/html/skodaice.com
+  131  mkdir /var/www/skodaice.com
+  132  mv /var/www/html/skodaice.com /var/www/skodaice.com/index.html
+  133  ls /var/www/skodaice.com/
+  134  sudo vim skodaice.com.conf 
+  135  sudo systemctl restart httpd
+  136  sudo certbot certonly --apache -d skodaice.com -d www.skodaice.com
+  137  curl
+  138  curl www.skodaice.com
+  139  sudo certbot certonly --apache -d skodaice.com -d www.skodaice.com
+  140  curl www.skodaice.com
+  141  curl http://www.skodaice.com
+  142  sudo certbot certonly --apache -d skodaice.com -d www.skodaice.com
